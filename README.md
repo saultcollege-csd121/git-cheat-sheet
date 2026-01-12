@@ -40,6 +40,7 @@
 ## Working with Remote Repositories
 
 - `git remote -v`: Show remote repository URLs.
+- `git remote add <name> <url>`: Add a new remote repository with the given name.
 - `git push <remote> <branch>`: Push commits to the remote repository, e.g. `git push origin lab-1`.
 - `git fetch <remote>`: Fetch changes from the remote repository without merging. (The changes will be stored in `origin/<branch>` branches.)
 - `git merge <branch>`: Merge a branch into the current branch. **Make sure you're on the correct branch before merging!**
@@ -54,13 +55,19 @@
 
 ## Synchronizing With the Template Repository
 
+Your lab repository is a fork of your teacher's template repository, meaning that they share a common history.  This means that you can easily sync your repository with any updates made to the template repository.
+
+> **IMPORTANT**: The instructions below are intended to be done on your LOCAL repository on your development machine, (NOT on GitHub). You will need to add the template repository as a remote repository in order to fetch changes from it.
+>
+> E.g. `git remote add template https://github.com/saultcollege-csd121/lab-starter.git`
+> 
+> You only need to do this once.  After that, you can fetch changes from the template repository at any time.
+>
+> You can verify that the remote was added successfully by running `git remote -v`, which should show the URL of the template repository under the name `template`.
+
 If your teacher updates the template repository, you can sync your repository with the latest changes by following these steps:
 
-1. On GitHub, navigate to the "Code" tab of your lab repository.
-2. Select the branch you want to update from the branch dropdown (e.g., `lab-1-starter`).
-3. Click on the "Sync fork" button located above the file listing.
-4. Click on the "Update branch" button to merge the latest changes from the template repository into your lab repository.  Your **GitHub repository** is now up to date, but the **local repository** on your development machine is not yet updated.
-5. On your development machine, run `git fetch origin` to fetch the latest changes from your GitHub repository into your local repository.
-6. **IMPORTANT**: Commit/stash any current uncommitted changes.
-7. **IMPORTANT**: Switch to the branch you are updating (e.g., `git switch lab-1-starter`).
-8. Run `git merge origin/<the branch name here>` to merge the fetched changes into your local branch (e.g., `git merge origin/lab-1-starter`).
+1. On your development machine, run `git fetch template` to download the latest changes from the template repository into your local repository.
+2. **IMPORTANT**: Commit/stash any current uncommitted changes.
+3. **IMPORTANT**: Switch to the branch you are updating (e.g., `git switch lab-1-starter`).
+4. Run `git merge template/<the branch name here>` to merge the fetched changes into your local branch (e.g., `git merge origin/lab-1-starter`).
