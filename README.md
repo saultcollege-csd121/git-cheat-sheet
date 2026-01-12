@@ -55,7 +55,7 @@
 
 ## Synchronizing With the Template Repository
 
-Your lab repository is a fork of your teacher's template repository, meaning that they share a common history.  This means that you can easily sync your repository with any updates made to the template repository.
+Your lab repository is a fork of your teacher's template repository, meaning that they share a common history.  This also means that you can easily sync your repository with any updates made to the template repository.
 
 > **IMPORTANT**: The instructions below are intended to be done on your LOCAL repository on your development machine, (NOT on GitHub). You will need to add the template repository as a remote repository in order to fetch changes from it.
 >
@@ -71,3 +71,4 @@ If your teacher updates the template repository, you can sync your repository wi
 2. **IMPORTANT**: Commit/stash any current uncommitted changes.
 3. **IMPORTANT**: Switch to the branch you are updating (e.g., `git switch lab-1-starter`).
 4. Run `git merge template/<the branch name here>` to merge the fetched changes into your local branch (e.g., `git merge origin/lab-1-starter`).
+5. If there are any merge conflicts, resolve them manually by editing the affected files, then commit the resolved changes.
